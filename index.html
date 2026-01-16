@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Lottie Animation</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    body {
+
+        padding: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    h1 {
+        font-size: clamp(35px, 5vw, 50px);
+        color: rgb(21, 164, 21);
+        ;
+    }
+
+    #success {
+        color: rgb(25, 253, 25);
+        background: rgb(78, 76, 76);
+        padding: 10px 30px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+
+    iframe {
+        display: none;
+        position: fixed;
+        top: 10px;
+        right: 20px;
+        border: none;
+        transition: all 0.5s ease-in-out;
+    }
+
+    form {
+        margin-top: 50px;
+        padding: 30px 40px;
+        border-radius: 8px;
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        box-shadow: 0px 0px 30px 1px rgb(160, 157, 157);
+    }
+
+    input {
+        padding: 10px 5px;
+        width: 350px;
+        outline: none;
+        border-radius: 6px;
+        font-size: 18px;
+    }
+
+    form label {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .first {
+        height: 100vh;
+        width: 100vw;
+        background: white;
+
+
+    }
+</style>
+
+
+<body>
+
+    <h1>REGISTRATION FORM </h1>
+
+    <form action="">
+
+
+        <label for="name">Name</label>
+        <input title="ENTER YOUR USERNAME" required class="username" type="text">
+        <br>
+        <label for="name"> Email </label>
+        <input title="ENTER YOUR EMAIL" required class="email" type="text">
+        <br>
+        <label for="name"> Password </label>
+        <input title="ENTER YOUR PASSWORD" required class="pass" type="text">
+        <br>
+        <label for="name">Verify Password </label>
+        <input title="RE-ENTER YOUR PASSWORD" required class="repass" type="text">
+        <br>
+        <button title="Click" type=" submit" id="success"> REGISTER</button>
+
+    </form>
+
+    <iframe class="first" src="https://lottie.host/embed/182ca6f8-8f0f-4cac-afb4-a03b2eda1acb/XQ8bKDkC6e.lottie"
+        frameborder="0"></iframe>
+    <iframe class="sec" src="https://lottie.host/embed/f264c6d4-41c1-4d5b-8f39-05b5486620e7/QmunZNmwle.lottie"></iframe>
+
+
+
+
+
+
+    <script type="module">
+        import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
+
+        new DotLottie({
+            autoplay: true,
+            loop: true,
+            canvas: document.getElementById("canvas3"),
+            src: "https://lottie.host/embed/f264c6d4-41c1-4d5b-8f39-05b5486620e7/QmunZNmwle.lottie",
+        });
+
+
+        let first = document.querySelector(".first")
+        let sec = document.querySelector(".sec")
+        let form = document.querySelector("form")
+        let h1 = document.querySelector("h1")
+        let btn = document.querySelector("#success")
+
+
+        let tl = gsap.timeline()
+
+        tl.from("form", {
+            y: 1200,
+            x: -1200,
+            scale: 5,
+            opacity: 0,
+            duration: 1,
+        })
+        tl.from("input", {
+            scale: 1.1,
+            stagger: 1,
+            duration: 0.4
+        })
+
+        gsap.from("h1", {
+            scale: 3,
+            y: -800,
+            x: 1200,
+            opacity: 0,
+            duration: 1,
+        })
+
+
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            first.style.display = "block"
+
+            setTimeout(() => {
+                first.style.display = "none"
+                sec.style.display = "block"
+                h1.textContent = "Registered Successfully"
+            }, 2500);
+
+            setTimeout(() => {
+                sec.style.display = "none"
+            }, 5500);
+
+            form.style.display = "none"
+        })
+
+
+
+
+
+
+
+        
+
+    </script>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
